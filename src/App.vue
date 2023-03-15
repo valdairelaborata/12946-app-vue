@@ -1,47 +1,26 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+  <div>
+      <!-- Nav bar  -->
+      <nav class="navbar navbar-dark bg-primary justify-content-between flex-nowrap flex-row">
+        <div class="container">
+          <router-link to="/" class="navbar-brand float-left">12956-Vue</router-link>
+          <ul class="nav navbar-nav flex-row float-right">
+            <li class="nav-item">
+              <router-link to="/" class="nav-link px-3">Novo Contato</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/view" class="nav-link">Listar Contatos</router-link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+    <!-- Router view -->
+    <div class="container mt-5">
+      <router-view>
+        
+      </router-view>
+    </div>
+  </div>
 
-  <h1>{{ titulo }}</h1>
-
-
-  <ul>
-    <li v-for="item in itens" :key="item.id">
-      <p>
-        {{ item.id }} - {{ item.nome }}
-        <button v-if="item.finalizado">Excluir</button>
-        <button v-else>Editar</button>
-      </p>
-    </li>
-  </ul>
 </template>
-
-<script>
-// import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-
-  data() {
-    return {
-      titulo: "Atividades",
-      itens: [
-        { id: 1, nome: 'Item 001', finalizado: false },
-        { id: 2, nome: 'Item 002', finalizado: true },
-        { id: 3, nome: 'Item 003', finalizado: true },
-        { id: 4, nome: 'Item 004', finalizado: false }
-      ]
-    }
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

@@ -20,10 +20,14 @@
 </template>
 
 <script>
+
+import axios from 'axios'
+
 export default {
     data() {
         return {
             contato: {
+                id: '',
                 nome: '',
                 idade: ''
             }
@@ -31,7 +35,14 @@ export default {
     },
     methods: {
         handleSubmitForm() {
-            alert(JSON.stringify(this.contato))
+            let apiURL = 'http://localhost:3000/contatos'
+
+            axios.post(apiURL, this.contato).then(() => {
+                alert('Contato registrado!!')
+            }).catch(error => {
+                console.log(error)
+            })
+
         }
 
     }

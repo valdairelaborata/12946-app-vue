@@ -55,6 +55,8 @@ export default {
         excluir(contato) {
             alert(JSON.stringify(contato))
         }
+
+        
     }
 
 

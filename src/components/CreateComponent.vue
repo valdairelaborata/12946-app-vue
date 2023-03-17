@@ -28,7 +28,7 @@ export default {
         return {
             contato: {
                 id: '',
-                nome: '',
+                nome: '',       
                 idade: ''
             }
         }

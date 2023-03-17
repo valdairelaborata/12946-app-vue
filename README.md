@@ -27,3 +27,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 https://vuejs.org/guide/essentials/lifecycle.html
+
+https://vuejs.org/guide/components/events.html#emitting-and-listening-to-events

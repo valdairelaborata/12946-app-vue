@@ -39,6 +39,13 @@ export default {
 
             axios.post(apiURL, this.contato).then(() => {
                 alert('Contato registrado!!')
+                
+                this.$router.push('/view');
+                this.contato = {
+                    nome: '',
+                    idade: ''
+                }
+
             }).catch(error => {
                 console.log(error)
             })

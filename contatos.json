@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nome": "Valdair",
-      "idade": "50"
+      "idade": "10"
     },
     {
       "id": 2,
@@ -19,11 +19,6 @@
       "id": 4,
       "nome": "Teste 010",
       "idade": "20"
-    },
-    {
-      "id": 5,
-      "nome": "Opa 010",
-      "idade": "50"
     }
   ]
 }

@@ -21,7 +21,8 @@
 
 <script>
 
-import axios from 'axios'
+
+import http from "../services/Services"
 
 export default {
     data() {
@@ -35,11 +36,10 @@ export default {
     },
     methods: {
         handleSubmitForm() {
-            let apiURL = 'http://localhost:3000/contatos'
 
-            axios.post(apiURL, this.contato).then(() => {
+            http.post('contatos', this.contato).then(() => {
                 alert('Contato registrado!!')
-                
+
                 this.$router.push('/view');
                 this.contato = {
                     nome: '',

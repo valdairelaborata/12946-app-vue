@@ -21,7 +21,9 @@
 </template>
 
 <script>
-import axios from "axios";
+
+
+import http from "../services/Services"
 
 export default {
     data() {
@@ -30,16 +32,16 @@ export default {
         }
     },
     created() {
-        let apiURL = `http://localhost:3000/contatos/${this.$route.params.id}`;
-        axios.get(apiURL).then((res) => {
+        let apiURL = `contatos/${this.$route.params.id}`;
+        http.get(apiURL).then((res) => {
             this.contato = res.data
         })
     },
     methods: {
         handleUpdateForm() {
-            let apiURL = `http://localhost:3000/contatos/${this.$route.params.id}`;
+            let apiURL = `contatos/${this.$route.params.id}`;
 
-            axios.put(apiURL, this.contato).then((res) => {
+            http.put(apiURL, this.contato).then((res) => {
                 console.log(res)
                 this.$router.push('/view')
             }).catch(error => {

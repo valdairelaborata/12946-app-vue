@@ -35,7 +35,9 @@
 </template>
 
 <script>
-import axios from "axios";
+
+import http from "../services/Services"
+
 
 export default {
     data() {
@@ -44,8 +46,8 @@ export default {
         }
     },
     created() {
-        let apiURL = 'http://localhost:3000/Contatos';
-        axios.get(apiURL).then(res => {
+     
+        http.get('contatos').then(res => {
             this.Contatos = res.data
         }).catch(error => {
             console.log(error)
@@ -53,11 +55,11 @@ export default {
     },
     methods: {
         excluir(id) {
-            let apiURL = `http://localhost:3000/Contatos/${id}`;
+            let apiURL = `Contatos/${id}`;
             let indexOfArrayItem = this.Contatos.findIndex(i => i.id === id);
 
             if (window.confirm("Confirma excluir o registro?")) {
-                axios.delete(apiURL).then(() => {
+                http.delete(apiURL).then(() => {
                     this.Contatos.splice(indexOfArrayItem, 1)
                 }).catch(error => {
                     console.log(error)
